@@ -135,52 +135,48 @@ header nav .buttom-nav .breed-menu li:hover ul,
 header nav .buttom-nav .resource-menu li:hover ul {
   max-height: 500px;
 }
-header #hero {
-  background-color: rgb(230, 230, 230);
-}
-header #hero .hero-inner {
-  background-color: rgb(230, 230, 230);
-}
-@media (max-width: 768px) {
-  header #hero .hero-inner {
-    height: calc(40vh + 450px);
-  }
-}
-@media (max-width: 450px) {
-  header #hero .hero-inner {
-    height: calc(30vh + 450px);
-  }
-}
-@media (min-width: 768px) {
-  header #hero .hero-inner {
-    height: calc(15vh + 450px);
-  }
-}
-@media (min-width: 800px) {
-  header #hero .hero-inner {
-    height: calc(10vh + 450px);
-  }
-}
-header #hero .hero-inner .hero-body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url(../img/1140\ hero\ image_0.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 450px;
-  margin-bottom: 5px;
-  border-bottom: 8px solid #6504b5;
+
+main {
   font-family: "Montserrat", sans-serif;
+  background-color: #3a0466;
 }
-header #hero .hero-inner .hero-body .search-box {
-  background-color: white;
+main #hero {
+  background-color: rgb(230, 230, 230);
+}
+main #hero .hero-img img {
   width: 100%;
-  border-radius: 3px;
+  object-fit: cover;
+  filter: brightness(70%);
+  border-bottom: 8px solid #6504b5;
 }
-header #hero .hero-inner .hero-body .search-box span {
+@media (max-height: 550px) {
+  main #hero .hero-img img {
+    height: 80vh;
+  }
+}
+@media (min-height: 550px) {
+  main #hero .hero-img img {
+    height: 60vh;
+  }
+}
+main #hero .hero-inner {
+  background-color: rgb(230, 230, 230);
+  position: relative;
+}
+main #hero .hero-inner .hero-body .search-box {
+  background-color: white;
+  width: 55vw;
+  border-radius: 3px;
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main #hero .hero-inner .hero-body .search-box span {
   font-size: 30px;
   color: #4D4751;
 }
-header #hero .hero-inner .hero-body .search-box input {
+main #hero .hero-inner .hero-body .search-box input {
   width: 45%;
   border: none;
   height: 60px;
@@ -188,13 +184,13 @@ header #hero .hero-inner .hero-body .search-box input {
   font-weight: 600;
   border-radius: 3px;
 }
-header #hero .hero-inner .hero-body .search-box input:focus {
+main #hero .hero-inner .hero-body .search-box input:focus {
   border: 1px solid #6504b5;
   border-bottom: 3px solid #6504b5;
   border-radius: 5px;
   outline: none;
 }
-header #hero .hero-inner .hero-body .search-box button {
+main #hero .hero-inner .hero-body .search-box button {
   border: none;
   color: white;
   background-color: #6504b5;
@@ -202,30 +198,35 @@ header #hero .hero-inner .hero-body .search-box button {
   padding: 10px 15px;
   border-radius: 5px;
 }
-header #hero .hero-inner .hero-body .title {
+main #hero .hero-inner .hero-body .title {
   color: white;
   text-shadow: 0px 0px 3px white;
+  width: 100%;
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-header #hero .hero-inner .hero-body .hero-card {
+main #hero .hero-inner .hero-body .hero-cards {
+  position: relative;
+  bottom: 10vh;
+}
+main #hero .hero-inner .hero-body .hero-card {
   background-color: white;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;
   transition: all 1s;
   color: #4D4751;
 }
-header #hero .hero-inner .hero-body .hero-card img {
+main #hero .hero-inner .hero-body .hero-card img {
   max-width: 100%;
   width: auto;
   height: auto;
   border: transparent;
 }
-header #hero .hero-inner .hero-body .hero-card:hover {
+main #hero .hero-inner .hero-body .hero-card:hover {
   border: 1px solid #6504b5;
   background-color: rgb(228, 222, 222);
-}
-
-main {
-  font-family: "Montserrat", sans-serif;
 }
 main #animal {
   background-color: rgb(230, 230, 230);

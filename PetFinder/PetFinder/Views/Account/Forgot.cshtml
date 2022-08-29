@@ -1,0 +1,30 @@
+﻿@model ForgotPasswordViewModel
+@{
+    ViewData["Title"] = "Şifrəni yenilə";
+}
+
+ <main>
+        <section id="send-gmail" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-12 col-lg-8">
+                        <div class="send-gmail-inner py-5 px-4 my-3">
+                            <h1 class="my-3">Şifrəni unutmusunuz?</h1>
+                            <p class="fs-5">Zəhmətolmas , şifrənizi unutmusunuzsa email adressinizi daxil edin . Şifrəni yeniləmək üçün keçid sizin email adressinizə göndəriləcək .</p>
+                            <form asp-action="forgot" method="post">
+                <label asp-for="Email" class="d-none"></label>
+                <input asp-for="Email" class="mb-0 ms-0 form-control" type="email" id="Email"
+                       placeholder="E-mailinizi daxil edin">
+                <span class="text-danger" asp-validation-for="Email"></span>
+                               <button type="submit" class="py-2 px-5 fs-5 my-2">Göndər</button>
+                            </form>
+                            <p class="pt-3">Artıq hesabınız var ? <a asp-action="login" class="text-light"> Giriş
+                                    et</a></p>
+                            <p>Qeydiyyatdan keçməmiziz ?<a asp-action="register" class="text-light"> Qeydiyyatdan keç</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>

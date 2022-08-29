@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> _userManager
+@{ 
+    AppUser logged = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        logged = await _userManager.FindByNameAsync(User.Identity.Name);
+    }
+}
+
+<!DOCTYPE html>
 <html lang="az">
 
 <head>
@@ -17,7 +28,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="~/assets/css/style.css">
+            <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css/main.css">
 </head>
 
 <body>
@@ -30,7 +42,7 @@
                         <div class="d-flex align-items-center purina">
                             <span>Powered By </span>
                             <div class="purina-logo">
-                                <img src="~/assets/img/indir.png" alt="purina-logo">
+                                <img src="../assets/img/indir.png" alt="purina-logo">
                             </div>
                         </div>
                     </div>
@@ -51,7 +63,8 @@
                     <div class="row justify-content-between ">
                         <div class="col-lg-2 col-2">
                             <div class="petfinder-logo">
-                                <img src="~/assets/img/Petfinder_logo.png" alt="petfinder-logo">
+                                <a href="~/home.html"><img src="../assets/img/Petfinder_logo.png" alt="petfinder-logo"></a>
+                                
                             </div>
                         </div>
                         <div class="col-lg-6 mb-0 d-lg-block d-none">
@@ -70,8 +83,18 @@
                                     <a href="#"> <i class="fa-solid fa-heart px-3"></i></a>
                                     <a href="#"> <i class="fa-solid fa-bars d-lg-none"></i></a>
                                 </span>
-                                <a href="#"><span class="d-none d-sm-inline">Qeydiyyat</span></a>
-                                <a href="#"><span class="d-none d-sm-inline">Giriş</span></a>
+                                @if (logged != null)
+                                {
+                                    <span class="d-none d-sm-inline"><span class="pe-2 ps-0 ms-0 fs-4"><i class="fa-solid fa-user"></i> </span>@logged?.FullName</span>
+                                    <a asp-controller="account" asp-action="logout"><span class="d-none d-sm-inline"><span class=" ps-0 ms-0  fs-4"><i class="fa-solid fa-right-from-bracket"></i> </span>Çıx</span></a> 
+                                    
+                                }
+                                else
+                                {
+                                      <a asp-controller="account" asp-action="register"><span class="d-none d-sm-inline">Qeydiyyat</span></a>
+                                <a asp-controller="account" asp-action="login"><span class="d-none d-sm-inline">Giriş</span></a>
+                                }
+                              
                             </div>
                         </div>
                     </div>
@@ -85,10 +108,10 @@
                         <div class="col-12">
                             <div class="breed-menu">
                                 <ul class="d-flex justify-content-center m-0 px-0 ">
-                                    <li class="pb-2 pt-3"><a href="#" class="text-light"><img src="~/assets/img/dog.png"
+                                    <li class="pb-2 pt-3"><a href="#" class="text-light"><img src="../assets/img/dog.png"
                                                 alt="dogimg" class="mx-3"> İt</a></li>
                                     <li class="pb-2 pt-3"><a href="#" class="text-light">Pişik <img
-                                                src="~/assets/img/cat.png" alt="catimg" class="mx-3"></a> </li>
+                                                src="../assets/img/cat.png" alt="catimg" class="mx-3"></a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -99,15 +122,15 @@
                                 <ul class="d-flex justify-content-between m-0 px-0">
                                     <li><a href="#" class="text-light">Heyvan himayəsi haqqında</a>
                                         <ul>
-                                            <li><a href="#">İt sahiblənmə</a></li>
-                                            <li><a href="#">Pişik sahiblənmə</a></li>
+                                            <li><a href="./animal.html">İt sahiblənmə</a></li>
+                                            <li><a href="./animal.html">Pişik sahiblənmə</a></li>
                                             <li><a href="#">Sahiblənmiş heyvanların hekayələri</a></li>
                                             <li><a href="#">Ev heyvanlarının qəbulu haqqında</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#" class="text-light">İt</a>
                                         <ul>
-                                            <li><a href="#"> İt sahiblənmə</a></li>
+                                            <li><a href="./animal.html"> İt sahiblənmə</a></li>
                                             <li><a href="#"> İt növləri</a>
                                             <li><a href="#"> İtlərin qidalanması</a></li>
                                             <li><a href="#"> İtlərin təlimi</a></li>
@@ -118,7 +141,7 @@
                                     </li>
                                     <li> <a href="#" class="text-light">Pişik</a>
                                         <ul>
-                                            <li> <a href="#"> Pişik sahiblənmə</a></li>
+                                            <li> <a href="./animal.html"> Pişik sahiblənmə</a></li>
                                             <li> <a href="#"> Pişik növləri</a></li>
                                             <li> <a href="#"> Pişiklərin qidalanması</a></li>
                                             <li> <a href="#">Pişiklərin təlimi</a></li>
@@ -155,7 +178,13 @@
             </div>
         </nav>
         <!--Navbar End-->
-        @RenderBody();
+
+    </header>
+    <!--Header End-->
+
+
+  @RenderBody();
+
 
     <!--Footer start-->
     <footer>
@@ -226,7 +255,7 @@
                     <div class="col-md-4">
                         <div class="sign">
                             <h5 class="py-2">Səyfəyə daxil olun və sahiblənə biləcəyniz yeni heyvanlar tapın</h5>
-                            <a href="#" class="text-center d-block py-5"><span class="py-2 px-4 fs-5"> Daxil
+                            <a href="./login.html" class="text-center d-block py-5"><span class="py-2 px-4 fs-5"> Daxil
                                     ol</span></a>
                         </div>
                     </div>

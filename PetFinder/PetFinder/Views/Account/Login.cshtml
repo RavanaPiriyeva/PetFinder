@@ -1,0 +1,34 @@
+﻿@model MemberLoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+ <main>
+        <section id="login" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center pt-5 mt-5">
+                    <div class="col-12 col-lg-6 text-center ">
+                        <div class="log-inner py-5">
+                            <h1 class="py-2"> Daxil ol</h1>
+                            <form asp-action="login" method="post" >
+                                <div>
+                            <input asp-for="LoginUserName" type="text"  id="username" placeholder="İstifadəçi adı" required>
+                            <span class="text-warning d-block" asp-validation-for="LoginUserName"></span>
+                            </div>
+                            <div>
+                            <input asp-for="LoginPassword" type="password"  id="password" placeholder="Şifrə" required>
+                              <span class="text-warning d-block" asp-validation-for="LoginPassword"></span>
+                            </div>
+                              <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <button type="submit" class="py-2 px-5 fs-5 my-2">Daxil ol</button>
+                            </form>
+                            <a  asp-action="forgot" class="d-block py-3 fs-5">Şifrəni unutmusuz?</a>
+                            <p >Qeydiyyatdan keçməmiziz ?<a asp-action="register"> Qeydiyyatdan keç</a></p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>

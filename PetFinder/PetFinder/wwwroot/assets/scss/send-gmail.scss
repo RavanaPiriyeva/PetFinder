@@ -1,0 +1,65 @@
+#send-gmail {
+    //background-image: url("../img/reset-password-bg.jpg");
+    background-image: linear-gradient(rgba(156, 23, 182, 0.26),
+            rgba(0, 0, 0, 0.5)), url("../img/reset-password-bg.jpg");
+    background-position: center;
+    background-size    : cover;
+    height             : auto;
+    font-family        : $jura-font;
+
+    .send-gmail-inner {
+        background-color: rgba(255, 255, 255, 0.527);
+        border-radius   : 10px;
+        box-shadow      : 0px 0px 28px rgba(255, 255, 255, 0.404);
+
+        input {
+            margin       : 20px auto;
+            padding      : 10px;
+            width        : 80%;
+            border-radius: 10px;
+            border       : 1px solid transparent;
+
+            &:focus {
+                border       : 1px solid $primary-color;
+                outline-color: $primary-color;
+            }
+        }
+
+        button {
+            border          : 3px solid $primary-color;
+            background-color: $primary-color;
+            font-weight     : 600;
+            color           : white;
+            border-radius   : 20px;
+            transition      : all 0.5s;
+
+            &:hover {
+                background-color: transparent;
+                color           : $primary-color;
+                border-top-left-radius    : 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+        }
+
+        h1 {
+            position: relative;
+        }
+
+        h1::before {
+            content         : "";
+            height          : 3px;
+            position        : absolute;
+            width           : 100px;
+            bottom          : -10px;
+            background-color: $primary-color;
+            border-radius   : 2px;
+            left            : 0;
+            //transform: translate(-50%,-50%);
+        }
+
+        p {
+            font-weight: 600;
+        }
+    }
+}

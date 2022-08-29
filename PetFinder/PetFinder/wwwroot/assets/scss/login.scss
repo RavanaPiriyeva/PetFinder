@@ -1,0 +1,73 @@
+$primary-color  : #6504b5;
+$secondary-color:#EFEEF1;
+$thired-color   :#4D4751;
+$main-font      :'Montserrat',
+sans-serif;
+$jura-font:"Jura",sans-serif;
+#login {
+    font-family: $jura-font;
+    //height             : 90vh;
+    height: auto;
+   // background-image   : url(../img/Introducing-a-cat-or-kitten-to-your-dog.png);
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+//opacity: 1;
+background-image: linear-gradient(rgba(182, 118, 23, 0.26),
+                       rgba(0, 0, 0, 0.5)), url("../img/Introducing-a-cat-or-kitten-to-your-dog.png");
+    input {
+        margin: 20px auto;
+       padding: 10px;
+       width: 80%;
+       border-radius: 10px;
+       border: none;
+    
+       &:focus{
+        border: 1px solid $primary-color;
+        outline-color: #d4851e;
+       }
+    }
+
+    .log-inner{
+        background-color: #6504b557;
+        border-radius: 20px;
+        box-shadow: 0px 0px 28px rgba(255, 255, 255, 0.329);
+    }
+    a,h1{
+        color: white;
+    }
+p  {
+    color: #d4851e;
+}
+ button{
+    border: 3px solid #d4851e;
+background-color: #d4851e;
+font-weight: 600;
+color: white;
+border-radius: 20px;
+transition: all 0.5s;
+&:hover{
+    background-color: transparent;
+    color: #d4851e;
+   
+   border-top-left-radius: 0px;
+   border-bottom-right-radius: 0px;
+ }
+    
+}
+h1{
+    position: relative;
+    
+}
+h1::before{
+content: "";
+height: 3px;
+position: absolute;
+width: 100px;
+bottom: 0;
+background-color: #d4851e;
+border-radius: 2px;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+}

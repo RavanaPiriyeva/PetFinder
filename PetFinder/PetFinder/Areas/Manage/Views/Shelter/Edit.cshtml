@@ -1,0 +1,70 @@
+﻿@model Shelter
+@{
+
+    ViewData["Title"] = "Edit";
+}
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                            <p class="mb-0">Your business dashboard template</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="container">
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form asp-action="edit" method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Ad</label>
+                    <input asp-for="Name" type="text" class="form-control" >
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                  <div class="mb-3">
+                    <label asp-for="Adrress" class="form-label">Address</label>
+                    <input asp-for="Adrress" type="text" class="form-control" >
+                    <span class="text-danger" asp-validation-for="Adrress"></span>
+
+                </div>
+                  <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" >
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label">Telefon</label>
+                    <input asp-for="Phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" class="form-control" >
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="CityId">Authors</label>
+                            <select asp-for="CityId" class="form-control" asp-items="new SelectList((List<City>)ViewBag.City,nameof(City.Id),nameof(City.Name))">
+                            </select>
+                            <span class="text-danger" asp-validation-for="CityId"></span>
+                        </div>
+                    </div>
+                     </div>
+                <button type="submit" class="btn btn-primary">Təsdiqlə</button>
+                  <a asp-action="cancel" class="btn btn-danger">Çıx</a>
+            </form>
+        </div>
+    </div>
+</div>
+                
+            </div>
+        </div>
+       

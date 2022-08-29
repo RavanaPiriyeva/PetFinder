@@ -1,0 +1,135 @@
+﻿@model MemberRegisterViewModel
+@{
+    ViewData["Title"] = "Qeydiyyat";
+}
+
+ <main>
+        <section id="signin" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class=" col-12 col-lg-6">
+                        <div class="sign-inner text-center py-4 my-4">
+                            <h1 class="text-light pb-3">Qeydiyyat</h1>
+                            <form asp-action="register" method="post">
+                                 <div>
+                <label asp-for="FullName" class="d-none"></label>
+                <input asp-for="FullName" class="mb-0 form-control" type="text" id="name"
+                       placeholder="Adınızı və soyadınızı daxil edin">
+                <span class="text-danger" asp-validation-for="FullName"></span>
+            </div>
+            <div>
+                <label asp-for="RegisterUserName" class="d-none"></label>
+                <input asp-for="RegisterUserName" class="mb-0 form-control" type="text" id="username"
+                       placeholder="İstifadəçi adını daxil edin">
+                <span class="text-danger" asp-validation-for="RegisterUserName"></span>
+            </div>
+            <div>
+                <label asp-for="Email" class="d-none"></label>
+                <input asp-for="Email" class="mb-0 form-control" type="email" id="Email"
+                       placeholder="E-mailinizi daxil edin">
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+                                <!-- <input list="regions" id="region" placeholder="Şəhər və rayon"> -->
+                             @*   <select id="regions" name="regions">
+                                    <option value="" disabled selected hidden class="text-light">Şəhər və ya rayon</option>
+                                    <option value="Bakı">Bakı</option>
+                                    <option value="Gəncə">Gəncə</option>
+                                    <option value="Naxçıvan">Naxçıvan</option>
+                                    <option value="Xankəndi">Xankəndi</option>
+                                    <option value="Lənkaran">Lənkaran</option>
+                                    <option value="Migəçevir">Migəçevir</option>
+                                    <option value="Naftalan">Naftalan</option>
+                                    <option value="Sumqayıt ">Sumqayıt</option>
+                                    <option value="Şəki">Şəki</option>
+                                    <option value="Şirvan">Şirvan</option>
+                                    <option value="Yevlax">Yevlax</option>
+                                    <option value="Bərdə">Bərdə</option>
+                                    <option value="Abşeron">Abşeron</option>
+                                    <option value="Ağcəbədi">Ağcəbədi</option>
+                                    <option value="Ağdam">Ağdam</option>
+                                    <option value="Ağdaş">Ağdaş</option>
+                                    <option value="Ağstafa">Ağstafa</option>
+                                    <option value="Ağsu">Ağsu</option>
+                                    <option value="Astara">Astara</option>
+                                    <option value="Babək">Babək</option>
+                                    <option value="Balakən ">Balakən</option>
+                                    <option value="Beylaqan">Beylaqan</option>
+                                    <option value="Bərdə">Bərdə</option>
+                                    <option value="Biləsuva">Biləsuva</option>
+                                    <option value="Cəbrayıl">Cəbrayıl</option>
+                                    <option value="Cəlilabad">Cəlilabad</option>
+                                    <option value="Culfa">Culfa</option>
+                                    <option value="Daşkəsən">Daşkəsən</option>
+                                    <option value="Füzuli">Füzuli</option>
+                                    <option value="Gədəbəy">Gədəbəy</option>
+                                    <option value="Goranboy">Goranboy</option>
+                                    <option value="Göyçay">Göyçay</option>
+                                    <option value="Göygöl">Göygöl</option>
+                                    <option value="Hacıqabul">Hacıqabul</option>
+                                    <option value="Xaçmaz">Xaçmaz</option>
+                                    <option value="Xızı ">Xızı</option>
+                                    <option value="Xocalı">Xocalı</option>
+                                    <option value="Xocavənd">Xocavənd</option>
+                                    <option value="İmişli">İmişli</option>
+                                    <option value="İsmayıllı">İsmayıllı</option>
+                                    <option value="Kəlbəcər">Kəlbəcər</option>
+                                    <option value="Kəngərli">Kəngərli</option>
+                                    <option value="Kürdəmir">Kürdəmir</option>
+                                    <option value="Qax">Qax</option>
+                                    <option value="Qazax">Qazax</option>
+                                    <option value="Qəbələ">Qəbələ</option>
+                                    <option value="Qobustan">Qobustan</option>
+                                    <option value="Quba">Quba</option>
+                                    <option value="Qusar">Qusar</option>
+                                    <option value="Qubadlı">Qubadlı</option>
+                                    <option value="Laçın">Laçın</option>
+                                    <option value="Lerik">Lerik</option>
+                                    <option value="Lənkaran">Lənkaran</option>
+                                    <option value="Masallı">Masallı</option>
+                                    <option value="Neftçala">Neftçala</option>
+                                    <option value="Oğuz">Oğuz</option>
+                                    <option value="Ordubad">Ordubad</option>
+                                    <option value="Saatlı">Saatlı</option>
+                                    <option value="Sabirabad">Sabirabad</option>
+                                    <option value="Salyan">Salyan</option>
+                                    <option value="Samux">Samux</option>
+                                    <option value="Sədərək">Sədərək</option>
+                                    <option value="Siyəzən">Siyəzən</option>
+                                    <option value="Şabran">Şabran</option>
+                                    <option value="Şahbuz">Şahbuz</option>
+                                    <option value="Şamaxı">Şamaxı</option>
+                                    <option value="Şəmkir">Şəmkir</option>
+                                    <option value="Şərur">Şərur</option>
+                                    <option value="Şuşa">Şuşa</option>
+                                    <option value="Tərtər">Tərtər</option>
+                                    <option value="Tovuz">Tovuz</option>
+                                    <option value="Ucar">Ucar</option>
+                                    <option value="Yardımlı">Yardımlı</option>
+                                    <option value="Yevlax">Yevlax</option>
+                                    <option value="Zaqatala">Zaqatala</option>
+                                    <option value="Zəngilan">Zəngilan</option>
+                                    <option value="Zərdab">Zərdab</option>
+                                </select>*@
+
+                               <div class="position-relative d-inline">
+                                   <input asp-for="RegisterPassword"  placeholder="Şifrə" id="password" >
+                                   <div class="position-absolute top-0 end-0 mx-2" id="password-iconn" ><i class="fa-regular fa-eye "></i></div>
+                               </div> 
+                               <div class="text-warning" asp-validation-for="RegisterPassword"></div>
+                               <div class="position-relative d-inline">
+                                   <input asp-for="ConfirmPassword" type="password" placeholder="Şifrəni təkrarla" id="password" >
+                                   <div class="position-absolute top-0 end-0 mx-2 " id="password-icon"><i class="fa-regular fa-eye "></i></div>
+                               </div> 
+                                 <div class="text-warning" asp-validation-for="ConfirmPassword"></div>
+                               <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                <button type="submit" class="py-2 px-5 fs-5 my-2">Daxil ol</button>
+                                <p class="py-3" >Artıq hesabınız var ? <a asp-action="login" class="text-light"> Giriş et</a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
